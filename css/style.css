@@ -1,0 +1,546 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+.header-section {
+    background-color: #7393B3;
+    padding: 35px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-name {
+    text-decoration: none;
+    color: black;
+    margin-left: 10%;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.top-header-buttons {
+    display: flex;
+    justify-content: end;
+    word-spacing: 5px;
+    font-size: 20px;
+}
+
+.header-button {
+    margin-right: 10px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.header-button:hover, .header-name:hover {
+    color: white;
+}
+
+.clear-fix {
+    clear: both;
+}
+
+.intro-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 200px;
+    gap: 50px;
+}
+
+.intro-name {
+    text-align: left;
+    font-size: 40px;
+}
+
+.intro-message {
+    text-align: left;
+    font-weight: normal;
+    width: 450px;
+}
+
+.personal-photo {
+    height: 40%;
+    width: 40%;
+    border-radius: 50%;
+}
+
+.github-button {
+    color: grey;
+}
+
+.socials {
+    position: absolute;
+    bottom: 40%;
+    left: -140px;
+}
+  
+.socials ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+  
+.socials ul li {
+    transition: 0.3s;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    font-size: 30px;
+    width: 100%;
+    height: 100%;
+}
+
+.socials ul li.github-button {
+    background-color: black;
+}
+
+.socials ul li.linkedin-button {
+    background-color: #0072b1;
+}
+  
+.socials ul li a {
+    text-align: right;
+    height: 100%;
+    width: 100%;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.socials ul li a i {
+    font-size: 40px;
+    margin-left: 25px;
+}
+
+/* How far social media icons pop out */
+.socials ul li:hover {
+    transform: translateX(140px);
+}
+
+/* Section header formatting for each section */
+.section-header {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+.section-description {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 0; 
+    font-weight: normal;
+}
+
+/* Additional spacing with auto scroll */
+.shortcut {
+    scroll-margin-top: 125px; 
+}
+
+/* Experience section */
+.experience-section {
+    margin-top: 50px;
+}
+
+.experience-button {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.experience-button:hover {
+    color: #7393B3;
+}
+
+.experience-tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.experience-button {
+    font-size: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+}
+
+/* The actual timeline (the vertical ruler) */
+.experience-timeline {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.experience-timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: black;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+/* Container around content */
+.container-experience-timeline {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* The circles on the timeline */
+.container-experience-timeline::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #7393B3;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+    left: 0;
+}
+
+/* Place the container to the right */
+.right {
+    left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent black;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent black transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+    left: -16px;
+}
+
+/* The actual content */
+.content-experience-timeline {
+    padding: 1em;
+    position: relative;
+    border: 2px solid black;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.content-experience-timeline div {
+    width: 90%;
+}
+
+.content-experience-timeline .experience-img {
+    width: 25%;
+}
+
+.content-experience-timeline .experience-img-circular {
+    width: 20%;
+}
+
+/* Project section */
+.project-section {
+    margin-top: 150px;
+}
+
+.swiper {
+    width: 75%;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: black;
+}
+
+.project-title {
+    margin-top: 20px;
+}
+
+.project-desc {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.project-img {
+    display: block;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mybar-img {
+    width: 90%;
+}
+
+.master-img {
+    width: 50%;
+}
+
+.project-content {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+.test {
+    display: flex;
+}
+
+.project-tech-stack-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin-top: 1rem;
+}
+
+.project-tech-stack-list li {
+    margin-right: 20px;
+    font-size: 1.5rem;
+}
+
+.project-button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #7393B3;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    width: 250px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 0px;
+    margin-top: 10px;
+}
+  
+.project-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+  
+.project-button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+  
+.project-button:hover span {
+    padding-right: 25px;
+}
+  
+.project-button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+/* Skills section */
+.skill-section {
+    margin-top: 100px;
+}
+  
+.skill-section .skill-icons {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+  
+.skill-section .skill-icons svg {
+    margin: 0.5rem;
+    width: 90px;
+}
+  
+.skill-section .skill-icons li {
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 1rem;
+    margin: 1rem;
+}
+  
+.skill-section .skill-icons li .aws-logo {
+    background: white;
+    padding: 10px;
+    border-radius: 3px;
+}
+  
+.skill-section .skill-icons li:hover {
+    transform: scale(1.3);
+}
+
+/* Contact section */
+.contact-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.contact-form {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 0px 20px #00000010;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.form-group {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 5px;
+    font-size: 18px;
+    border: 1px solid #00000010;
+    margin-top: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 8px;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: .3s ease background-color;
+}
+
+button[type="submit"]:hover {
+    background-color: #7393B3;
+}
+
+#status {
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+#status.success {
+    background-color: rgb(211, 250, 153);
+    animation: status 4s ease forwards;
+}
+
+#status.error {
+    background-color: rgb(250, 129, 92);
+    animation: status 4s ease forwards;
+}
+
+@keyframes status {
+    0% {
+        opacity: 1;
+        pointer-events: all;
+    }
+    90% {
+        opacity: 1;
+        pointer-events: all;
+    }
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.footer {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    background-color: #7393B3;
+    color: white;
+    margin-top: 100px;
+}
+
+.footer-name {
+    width: 100%;
+    margin-top: 50px;
+    margin-left: 15%;
+}
+
+.footer-description {
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 15%;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.footer-copyright {
+    margin: auto;
+}
+
+
